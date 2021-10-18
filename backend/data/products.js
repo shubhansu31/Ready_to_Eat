@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: '1',
     name: 'Aloo Paratha',
     image: '/images/aloo_paratha.png',
     description:
@@ -11,7 +10,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Burger',
     image: '/images/burger.png',
     description:
@@ -22,7 +20,6 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'Chole Bhature',
     image: '/images/chole_bhature.png',
     description:
@@ -33,7 +30,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Coffee',
     image: '/images/coffee.png',
     description:
@@ -44,7 +40,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Dosa',
     image: '/images/dosa.png',
     description:
@@ -55,7 +50,6 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Samosa',
     image: '/images/samosa.png',
     description:

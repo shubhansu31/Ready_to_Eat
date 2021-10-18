@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import User from './userModel.js';
 
 const reviewSchema = mongoose.Schema({
     name: { type: String, required: true },
@@ -12,7 +13,7 @@ const productSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: true
+        ref: 'User'
     },
     name: {
         type: String,
@@ -22,14 +23,6 @@ const productSchema = mongoose.Schema({
         type: String,
         required: true,
         unquie: true
-    },
-    brand: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
     },
     description: {
         type: String,
