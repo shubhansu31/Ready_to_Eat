@@ -13,7 +13,7 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 // @desc Fetch a single products 
-// @route GET /api/products/:is
+// @route GET /api/products/:id
 // @access Public
 router.get('/:id', asyncHandler(async (req, res) => {
     const product = await Product.findById(req.params.id)
