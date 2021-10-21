@@ -29,6 +29,10 @@ const CartScreen = ({ match, location, history }) => {
 
     }
 
+    const checkoutHandler = () => {
+        history.push('/login?redirect=shipping')
+    }
+
     return (
         <Row>
             <Col md={8}>
@@ -82,10 +86,20 @@ const CartScreen = ({ match, location, history }) => {
                             </h2>
                             <i className='fa fa-inr'> </i>{cartItem.reduce((acc, item) => acc + item.qty * item.price, 0)}
                         </ListGroup.Item>
+                        <ListGroup.Item>
+                            <Button type='button'
+                                className='btn-block'
+                                disabled={cartItem.length === 0}
+                                onClick={checkoutHandler}
+                            >
+                                Proceed to Checkout
+                            </Button>
+                        </ListGroup.Item>
+
                     </ListGroup>
                 </Card>
             </Col>
-        </Row>
+        </Row >
     )
 }
 
