@@ -1,2 +1,2 @@
-# Ready_to_Eat
-Online food ordering website using ReactJs and NodeJs
+# Ready to Eat
+A website to order food from your college cafeteria 
