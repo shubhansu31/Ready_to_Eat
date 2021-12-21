@@ -198,7 +198,7 @@ const OrderScreen = ({ match, history }) => {
                                     <Col>${order.totalPrice}</Col>
                                 </Row>
                             </ListGroup.Item>
-                            {!order.isPaid && (
+                            {!order.isPaid && !userInfo.isAdmin && (
                                 <ListGroup.Item>
                                     <PayPalButton
                                         amount={order.totalPrice}
@@ -210,7 +210,6 @@ const OrderScreen = ({ match, history }) => {
                             {loadingDeliver && <Loader />}
                             {userInfo &&
                                 userInfo.isAdmin &&
-                                order.isPaid &&
                                 !order.isDelivered && (
                                     <ListGroup.Item>
                                         <Button
