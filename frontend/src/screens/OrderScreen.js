@@ -19,6 +19,7 @@ import {
 const OrderScreen = ({ match, history }) => {
     const orderId = match.params.id
 
+    // eslint-disable-next-line
     const [sdkReady, setSdkReady] = useState(false)
 
     const dispatch = useDispatch()
@@ -27,6 +28,7 @@ const OrderScreen = ({ match, history }) => {
     const { order, loading, error } = orderDetails
 
     const orderPay = useSelector((state) => state.orderPay)
+    // eslint-disable-next-line
     const { loading: loadingPay, success: successPay } = orderPay
 
     const orderDeliver = useSelector((state) => state.orderDeliver)
@@ -74,6 +76,7 @@ const OrderScreen = ({ match, history }) => {
                 setSdkReady(true)
             }
         }
+        // eslint-disable-next-line
     }, [dispatch, orderId, successPay, successDeliver, order])
 
     const successPaymentHandler = (paymentResult) => {
