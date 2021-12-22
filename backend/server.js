@@ -1,4 +1,5 @@
 import express from 'express'
+import path from 'path'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import morgan from 'morgan'
@@ -25,15 +26,27 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('<h1 style="color:purple;text-align:centre">API is running...</h1>')
-})
-
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
+
+
+const __dirname = path.resolve()
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/frontend/build')))
+
+    app.get('*', (req, res) =>
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+    )
+} else {
+    app.get('/', (req, res) => {
+        res.send('API is running....')
+    })
+}
 
 app.use(notFound);
 app.use(errorHandler);

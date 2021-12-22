@@ -11,6 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUTION=false npm install --prefix frontent && npm run build --prefix frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
