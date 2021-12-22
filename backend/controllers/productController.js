@@ -99,7 +99,6 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @access  Private
 const createProductReview = asyncHandler(async (req, res) => {
     const { rating, comment } = req.body
-
     const product = await Product.findById(req.params.id)
 
     if (product) {
@@ -115,7 +114,7 @@ const createProductReview = asyncHandler(async (req, res) => {
         const review = {
             name: req.user.name,
             rating: Number(rating),
-            comment,
+            comments: comment,
             user: req.user._id,
         }
 
